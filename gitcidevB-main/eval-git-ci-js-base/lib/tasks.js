@@ -14,4 +14,14 @@ function reset() {
   nextId = 1;
 }
 
-module.exports = { getTasks, reset };
+function addTask(id, nom, done = false) {
+  const task = { id, nom, done};
+  tasks.push(task);
+  return task;
+}
+
+function countTaskDone() {
+  return tasks.filter(task => task.done).length;
+}
+
+module.exports = { getTasks, reset, addTask, countTaskDone };
