@@ -20,11 +20,8 @@ function addTask(id, nom, done = false) {
   return task;
 }
 
-function toggleTask(id) {
-  const task = tasks.find(tache => tache.id === id);
-  if (task) {
-    task.done = true;
-  }
+function countTaskDone() {
+  return tasks.filter(task => task.done).length;
 }
 
-module.exports = { getTasks, reset, addTask, toggleTask };
+module.exports = { getTasks, reset, addTask, countTaskDone };
